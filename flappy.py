@@ -27,9 +27,9 @@ last_pipe = pygame.time.get_ticks() - pipe_frequency
 score = 0
 pass_pipe = False
 
-bg = pygame.image.load('img/bg.png')
-ground_img = pygame.image.load('img/ground.png')
-button_img = pygame.image.load('img/restart.png')
+bg = pygame.image.load('FlappyBird-Clone/img/bg.png')
+ground_img = pygame.image.load('FlappyBird-Clone/img/ground.png')
+button_img = pygame.image.load('FlappyBird-Clone/img/restart.png')
 
 def draw_text(text, font, text_col, x, y):
 	img = font.render(text, True, text_col)
@@ -50,7 +50,7 @@ class Bird(pygame.sprite.Sprite):
 		self.index = 0
 		self.counter = 0
 		for num in range (1, 4):
-			img = pygame.image.load(f"img/bird{num}.png")
+			img = pygame.image.load(f"FlappyBird-Clone/img/bird{num}.png")
 			self.images.append(img)
 		self.image = self.images[self.index]
 		self.rect = self.image.get_rect()
@@ -96,7 +96,7 @@ class Pipe(pygame.sprite.Sprite):
 
 	def __init__(self, x, y, position):
 		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.image.load("img/pipe.png")
+		self.image = pygame.image.load("FlappyBird-Clone/img/pipe.png")
 		self.rect = self.image.get_rect()
 		if position == 1:
 			self.image = pygame.transform.flip(self.image, False, True)
